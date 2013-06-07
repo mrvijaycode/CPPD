@@ -1,0 +1,45 @@
+﻿<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Convert URL</title>
+<script>
+
+function replaceURL()
+{
+
+//debugger;
+var Multiline=Changecode(document.getElementById("txtMultiline").innerText);
+var Multiline1=Multiline.split("C:/");
+var TextVal="C:/"+Multiline1[1];
+//var Multiline1=Multiline.substring(8,Multiline.length);
+document.getElementById("txtMultiline").innerText=TextVal;
+
+
+}
+
+	function Changecode(inputString) {
+	  
+						
+		   while (inputString.indexOf("/")!= -1)
+		    { // Check for spaces at the beginning of the string
+		      inputString= document.getElementById("txtMultiline").value.replace("/","\\");
+		      
+		   }
+		   return inputString;
+		   
+		   
+		}
+
+
+</script>
+</head>
+
+<body>
+<h1>Convert URL</h1>
+<textarea id="txtMultiline" style="width:600px;height:200px"></textarea>
+<br><br>
+<input id="btnChange" onclick="replaceURL();" type="button" value="Convert">
+</body>
+
+</html>
